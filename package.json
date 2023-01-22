@@ -1,0 +1,28 @@
+{
+  "name": "erc20-token",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aspandey1/ERC20-token.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aspandey1/ERC20-token/issues"
+  },
+  "homepage": "https://github.com/aspandey1/ERC20-token#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "hardhat": "^2.12.6"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.1",
+    "flat": "^5.0.2",
+    "uuid": "^9.0.0"
+  }
+}
