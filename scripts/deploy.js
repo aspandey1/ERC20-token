@@ -7,20 +7,12 @@
 const hre = require("hardhat");
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+  const TetraToken = await hre.ethers.getContractFactory("TetraToken");
+  const tetraToken = await TetraToken.deploy(1000000000, 50);
 
-  const lockedAmount = hre.ethers.utils.parseEther("1");
+  await tetraToken.deployed();
 
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
-
-  await lock.deployed();
-
-  console.log(
-    `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
-  );
+  console.log("Tetra Token deployed: ", tetraToken.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
